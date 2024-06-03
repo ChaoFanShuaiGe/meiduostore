@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="GoodsProvider.Dao.ShoppingDao">
+    <select id="getAllCart" resultType="model.Cart" parameterType="int">
+        select * from cart where uid = #{uid}
+    </select>
+
+    <insert id="insertCart" parameterType="model.Cart">
+        insert into cart (goodsname,number,price,goodid,uid)
+        values (#{goodsname},#{number},#{price},#{goodid},#{uid})
+    </insert>
+
+    <update id="updateCart" parameterType="int">
+        update cart set number = number + #{number} where id = #{id}
+    </update>
+    
+    <delete id="deleteCart" parameterType="int">
+        delete from cart where id = #{id}
+    </delete>
+</mapper>

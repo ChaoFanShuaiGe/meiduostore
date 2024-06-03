@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org
+" th:with="title='美多商城登录',active='home'">
+<head>
+    <meta charset="utf-8" />
+    <title>登录页面</title>
+    <link rel="stylesheet" type="text/css" href="/user/css/public.css" />
+    <link rel="stylesheet" type="text/css" href="/user/css/login.css"/>
+</head>
+<body>
+<div class="box">
+    <div class="dly">
+        <div class="dly_left"></div>
+        <form action="/user/login" method="get">
+            <div class="dly_right">
+                <p class="tit">登录验证</p>
+                <div class="zc_username">
+                    <span class="zc_tit">用户名</span>
+                    <input type="text" id="userName" name="uname" class="username" />
+                    <!-- for="email"-->
+                </div>
+                <div class="zc_password">
+                    <span class="zc_tit">密&nbsp;&nbsp;&nbsp;码</span>
+                    <input type="password" id="password" name="upassword" class="pass_word" />
+                    <!-- for="email"-->
+                    <label class="error" id="pass_word_error"></label>
+                </div>
+                <input id="btn-ty" class="btn-ty" type="submit" value="登录">
+                <!--<button id="btn-ty" class="btn-ty" onclick="login.doLogin();">登录</button>-->
+
+                <p class="cstyle">没有账号？<a href='/user/toregister'>立即注册</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+

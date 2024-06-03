@@ -1,0 +1,21 @@
+server:
+  port: 8601
+spring:
+  application:
+    name: user-provider
+  # 配置数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/account?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: tda6060g
+# 配置 eureka-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8500/eureka/
+  instance:
+    hostname: localhost
+# 配置mybatis包扫描路径
+mybatis:
+  mapper-locations: classpath:/mapper/*
